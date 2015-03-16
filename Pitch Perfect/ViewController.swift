@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var recordIP: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    @IBAction func recordAudio(sender: UIButton) {
+        //TODO: Record users voice
+        recordIP.hidden = false
+        println("In recordAudio")
+        
+    }
+    @IBAction func Stop(sender: UIButton) {
+        recordIP.hidden = true
+    }
 }
 
