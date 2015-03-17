@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sas-3C-4NO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -36,9 +36,6 @@
                                 <state key="normal" image="stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="148" y="445" width="105" height="50"/>
-                                </variation>
                                 <connections>
                                     <action selector="Stop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zzi-2G-oas"/>
                                 </connections>
@@ -60,12 +57,12 @@
                                 <exclude reference="Cl9-O6-eaN"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="jfL-f1-hE9"/>
-                                <exclude reference="q1I-No-CgQ"/>
+                                <exclude reference="zh6-LQ-0xF"/>
                                 <exclude reference="3z7-V3-1is"/>
                                 <exclude reference="Iag-Ug-9aC"/>
                                 <exclude reference="gdi-b4-1GV"/>
-                                <exclude reference="zh6-LQ-0xF"/>
+                                <exclude reference="jfL-f1-hE9"/>
+                                <exclude reference="q1I-No-CgQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -75,21 +72,43 @@
                                 <include reference="Cl9-O6-eaN"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="jfL-f1-hE9"/>
-                                <include reference="q1I-No-CgQ"/>
+                                <include reference="zh6-LQ-0xF"/>
                                 <include reference="3z7-V3-1is"/>
                                 <include reference="Iag-Ug-9aC"/>
                                 <include reference="gdi-b4-1GV"/>
-                                <include reference="zh6-LQ-0xF"/>
+                                <include reference="jfL-f1-hE9"/>
+                                <include reference="q1I-No-CgQ"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="aUa-EP-sBL"/>
                     <connections>
+                        <outlet property="recordButton" destination="eEI-Xx-fEp" id="6nF-iF-qgV"/>
                         <outlet property="recordIP" destination="ku5-XS-POv" id="PAz-k2-q8x"/>
+                        <outlet property="stopButton" destination="Cl9-O6-eaN" id="bJR-q1-5wH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1704" y="-154"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r89-me-REK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sas-3C-4NO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yqt-YG-oxW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="chp-l4-Ytj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLc-ZK-12d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="883.5" y="-154"/>
         </scene>
     </scenes>
     <resources>
