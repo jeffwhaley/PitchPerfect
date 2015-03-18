@@ -5,6 +5,23 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="SFL-Tg-IE4">
+            <objects>
+                <viewController id="oyR-va-jWY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jmb-Pc-hBS"/>
+                        <viewControllerLayoutGuide type="bottom" id="J5S-Yc-Qhu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tcP-fb-ZRb">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJ4-nl-Gs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2464.5" y="-154"/>
+        </scene>
+        <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,6 +55,7 @@
                                 </state>
                                 <connections>
                                     <action selector="Stop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zzi-2G-oas"/>
+                                    <segue destination="oyR-va-jWY" kind="show" id="DOZ-qs-vTU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,7 +99,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="aUa-EP-sBL"/>
+                    <navigationItem key="navigationItem" title="Record" id="aUa-EP-sBL"/>
                     <connections>
                         <outlet property="recordButton" destination="eEI-Xx-fEp" id="6nF-iF-qgV"/>
                         <outlet property="recordIP" destination="ku5-XS-POv" id="PAz-k2-q8x"/>
