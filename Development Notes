@@ -1,0 +1,8 @@
+Notes on Development of Pitch Perfect
+Jeff Whaley
+
+AVFoundation Review
+
+AVAudioPlayerNode Class plays from a buffer
+
+AVAudioUnit has subclasses AVAudioUnitTimePitch
