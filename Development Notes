@@ -3,6 +3,8 @@ Jeff Whaley
 
 AVFoundation Review
 
+AVAudioPlayer seems to be the primary class for playing
+
 AVAudioPlayerNode Class plays from a buffer
 
-AVAudioUnit has subclasses AVAudioUnitTimePitch
+AVAudioUnit has subclasses AVAudioUnitTimePitch and AVAudioUnitTimeEffect that might be useful
