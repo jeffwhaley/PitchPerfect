@@ -19,38 +19,76 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vN-bC-3Pb">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Slow" image="slow">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="87" width="100" height="100"/>
+                                <state key="normal" image="slow"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 </variation>
                                 <connections>
                                     <action selector="playSlow:" destination="oyR-va-jWY" eventType="touchUpInside" id="Kc7-dg-uUh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he0-TR-AfP">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop-1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopPlay:" destination="oyR-va-jWY" eventType="touchUpInside" id="mkT-3P-f8k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpI-r1-WeN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="fast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playFast:" destination="oyR-va-jWY" eventType="touchUpInside" id="PSY-CK-LO1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7vN-bC-3Pb" firstAttribute="leading" secondItem="tcP-fb-ZRb" secondAttribute="leadingMargin" constant="14" id="AWn-7j-Zra"/>
-                            <constraint firstItem="7vN-bC-3Pb" firstAttribute="top" secondItem="Jmb-Pc-hBS" secondAttribute="bottom" constant="23" id="zHl-AL-qJx"/>
+                            <constraint firstItem="7vN-bC-3Pb" firstAttribute="leading" secondItem="tcP-fb-ZRb" secondAttribute="leadingMargin" constant="14" id="AWn-7j-Zra">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="FpI-r1-WeN" firstAttribute="top" secondItem="7vN-bC-3Pb" secondAttribute="top" id="BlN-fM-pRI"/>
+                            <constraint firstAttribute="centerX" secondItem="he0-TR-AfP" secondAttribute="centerX" id="RlG-tZ-zVn"/>
+                            <constraint firstItem="J5S-Yc-Qhu" firstAttribute="top" secondItem="he0-TR-AfP" secondAttribute="bottom" constant="64" id="g1v-rZ-vhy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FpI-r1-WeN" secondAttribute="trailing" constant="35" id="vyl-6V-ks6">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="7vN-bC-3Pb" firstAttribute="top" secondItem="Jmb-Pc-hBS" secondAttribute="bottom" constant="23" id="zHl-AL-qJx">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="7vN-bC-3Pb"/>
+                                <exclude reference="he0-TR-AfP"/>
+                                <exclude reference="FpI-r1-WeN"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="AWn-7j-Zra"/>
                                 <exclude reference="zHl-AL-qJx"/>
+                                <exclude reference="BlN-fM-pRI"/>
+                                <exclude reference="vyl-6V-ks6"/>
+                                <exclude reference="RlG-tZ-zVn"/>
+                                <exclude reference="g1v-rZ-vhy"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="7vN-bC-3Pb"/>
+                                <include reference="he0-TR-AfP"/>
+                                <include reference="FpI-r1-WeN"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="AWn-7j-Zra"/>
                                 <include reference="zHl-AL-qJx"/>
+                                <include reference="BlN-fM-pRI"/>
+                                <include reference="vyl-6V-ks6"/>
+                                <include reference="RlG-tZ-zVn"/>
+                                <include reference="g1v-rZ-vhy"/>
                             </mask>
                         </variation>
                     </view>
@@ -169,7 +207,9 @@
     </scenes>
     <resources>
         <image name="Microphone" width="100" height="100"/>
+        <image name="fast" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
+        <image name="stop-1" width="50" height="50"/>
     </resources>
 </document>
