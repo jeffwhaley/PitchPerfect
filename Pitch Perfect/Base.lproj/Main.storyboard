@@ -100,7 +100,7 @@
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -131,7 +131,6 @@
                                 </state>
                                 <connections>
                                     <action selector="Stop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zzi-2G-oas"/>
-                                    <segue destination="oyR-va-jWY" kind="show" id="DOZ-qs-vTU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,6 +179,7 @@
                         <outlet property="recordButton" destination="eEI-Xx-fEp" id="6nF-iF-qgV"/>
                         <outlet property="recordIP" destination="ku5-XS-POv" id="PAz-k2-q8x"/>
                         <outlet property="stopButton" destination="Cl9-O6-eaN" id="bJR-q1-5wH"/>
+                        <segue destination="oyR-va-jWY" kind="show" identifier="stopRecording" id="WfF-00-h4x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
