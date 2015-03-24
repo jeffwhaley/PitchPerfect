@@ -13,22 +13,19 @@ class PlaySoundsViewController: UIViewController {
 
     var audioPlayer = AVAudioPlayer()
     var receivedAudio:RecordedAudio!
+    
+    var audioEngine:AVAudioEngine!
+    var audioFile:AVAudioFile!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        if var path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3") {
-//            var fileurl = NSURL.fileURLWithPath(path)
-//        // println("fileurl= \(fileurl)")
-//        }else {
-//            println("empty path")
-//        }
 
         audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
         audioPlayer.prepareToPlay()
         audioPlayer.enableRate = true
 
-        // Do any additional setup after loading the view.
+        audioEngine = AVAudioEngine()
+        audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,8 +47,40 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.play()
     }
     
+    @IBAction func playChipmunkAudio(sender: UIButton) {
+        playAudioVariablePitch(1000)
+    }
+    
+    @IBAction func playDarthVaderAudio(sender: UIButton) {
+        playAudioVariablePitch(-1000)
+    }
+    
+    func playAudioVariablePitch(pitch:Float) {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var changePitcheffect = AVAudioUnitTimePitch()
+        changePitcheffect.pitch = pitch
+        audioEngine.attachNode(changePitcheffect)
+        
+        audioEngine.connect(audioPlayerNode, to: changePitcheffect, format: nil)
+        audioEngine.connect(changePitcheffect, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        
+        audioPlayerNode.play()
+    }
+    
     @IBAction func stopPlay(sender: UIButton) {
         audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+
     }
     
     /*
