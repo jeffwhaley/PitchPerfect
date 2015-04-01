@@ -70,7 +70,7 @@
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="7vN-bC-3Pb" firstAttribute="leading" secondItem="tcP-fb-ZRb" secondAttribute="leadingMargin" constant="18" id="AWn-7j-Zra">
-                                <variation key="widthClass=compact" constant="55"/>
+                                <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="FpI-r1-WeN" firstAttribute="top" secondItem="7vN-bC-3Pb" secondAttribute="top" id="BlN-fM-pRI"/>
                             <constraint firstItem="APz-vk-9DZ" firstAttribute="top" secondItem="7vN-bC-3Pb" secondAttribute="bottom" constant="47" id="Izp-o2-RK0"/>
@@ -79,7 +79,7 @@
                             <constraint firstItem="J5S-Yc-Qhu" firstAttribute="top" secondItem="he0-TR-AfP" secondAttribute="bottom" constant="64" id="g1v-rZ-vhy"/>
                             <constraint firstItem="APz-vk-9DZ" firstAttribute="centerY" secondItem="vmA-2Y-eN0" secondAttribute="centerY" id="rlh-nm-aU6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FpI-r1-WeN" secondAttribute="trailing" constant="35" id="vyl-6V-ks6">
-                                <variation key="widthClass=compact" constant="55"/>
+                                <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="7vN-bC-3Pb" firstAttribute="top" secondItem="Jmb-Pc-hBS" secondAttribute="bottom" constant="23" id="zHl-AL-qJx">
                                 <variation key="widthClass=compact" constant="47"/>
@@ -94,16 +94,16 @@
                                 <exclude reference="7vN-bC-3Pb"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="g1v-rZ-vhy"/>
                                 <exclude reference="6wH-Z7-20C"/>
                                 <exclude reference="AWn-7j-Zra"/>
                                 <exclude reference="zHl-AL-qJx"/>
+                                <exclude reference="Izp-o2-RK0"/>
+                                <exclude reference="rlh-nm-aU6"/>
                                 <exclude reference="BlN-fM-pRI"/>
                                 <exclude reference="ST5-Lt-Mjx"/>
                                 <exclude reference="vyl-6V-ks6"/>
-                                <exclude reference="Izp-o2-RK0"/>
-                                <exclude reference="rlh-nm-aU6"/>
                                 <exclude reference="RlG-tZ-zVn"/>
-                                <exclude reference="g1v-rZ-vhy"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -115,16 +115,16 @@
                                 <include reference="7vN-bC-3Pb"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="g1v-rZ-vhy"/>
                                 <include reference="6wH-Z7-20C"/>
                                 <include reference="AWn-7j-Zra"/>
                                 <include reference="zHl-AL-qJx"/>
+                                <include reference="Izp-o2-RK0"/>
+                                <include reference="rlh-nm-aU6"/>
                                 <include reference="BlN-fM-pRI"/>
                                 <include reference="ST5-Lt-Mjx"/>
                                 <include reference="vyl-6V-ks6"/>
-                                <include reference="Izp-o2-RK0"/>
-                                <include reference="rlh-nm-aU6"/>
                                 <include reference="RlG-tZ-zVn"/>
-                                <include reference="g1v-rZ-vhy"/>
                             </mask>
                         </variation>
                     </view>
@@ -154,7 +154,7 @@
                                     <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nwV-jh-jVl"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording in progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ku5-XS-POv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ku5-XS-POv">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,7 +170,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ku5-XS-POv" firstAttribute="top" secondItem="eEI-Xx-fEp" secondAttribute="bottom" constant="8" id="3z7-V3-1is"/>
                             <constraint firstAttribute="centerX" secondItem="ku5-XS-POv" secondAttribute="centerX" constant="-0.5" id="Iag-Ug-9aC"/>
