@@ -213,7 +213,7 @@
                     <navigationItem key="navigationItem" title="Record" id="aUa-EP-sBL"/>
                     <connections>
                         <outlet property="recordButton" destination="eEI-Xx-fEp" id="6nF-iF-qgV"/>
-                        <outlet property="recordIP" destination="ku5-XS-POv" id="PAz-k2-q8x"/>
+                        <outlet property="recordStatus" destination="ku5-XS-POv" id="fR3-X5-2cN"/>
                         <outlet property="stopButton" destination="Cl9-O6-eaN" id="bJR-q1-5wH"/>
                         <segue destination="oyR-va-jWY" kind="show" identifier="stopRecording" id="WfF-00-h4x"/>
                     </connections>

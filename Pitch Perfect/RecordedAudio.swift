@@ -9,6 +9,7 @@
 import Foundation
 
 class RecordedAudio: NSObject{
+// Holds the audio location so can be saved across views
     
     var filePathUrl: NSURL!
     var title: String!

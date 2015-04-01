@@ -10,37 +10,39 @@ import UIKit
 import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
+    // plays sounds with pitch and speed effects
 
     var audioPlayer = AVAudioPlayer()
-    var receivedAudio:RecordedAudio!
+    var receivedAudio:RecordedAudio! // holds recorded sound location
     
     var audioEngine:AVAudioEngine!
     var audioFile:AVAudioFile!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // uses AVAudioPlayer for different speed playback
         audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
         audioPlayer.prepareToPlay()
         audioPlayer.enableRate = true
 
+        // uses AVAudioEngine for different pitch playback
         audioEngine = AVAudioEngine()
         audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
         
-        //This piece of code sets the sound to always play on the Speakers
+        //Sets the sound to always play on the speakers
         let session = AVAudioSession.sharedInstance()
         var error: NSError?
         session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: &error)
         session.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: &error)
         session.setActive(true, error: &error)
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+// functions for the buttons
     @IBAction func playSlow(sender: UIButton) {
         playAudioVariableSpeed(0.5)
     }
@@ -57,20 +59,34 @@ class PlaySoundsViewController: UIViewController {
         playAudioVariablePitch(-1000)
     }
     
-    func playAudioVariableSpeed(speed:Float) {
+    @IBAction func stopPlay(sender: UIButton) {
+        stopAudio()
+    }
+    
+// Helper functions
+    
+    func stopAudio() {
+        // stops both player and engine safely
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
-
+    }
+    
+    func playAudioVariableSpeed(speed:Float) {
+        // plays with variable speed 
+        // allowable range 0.5 to 2, 1 is normal speed
+        stopAudio()
+        
         audioPlayer.currentTime = 0.0
         audioPlayer.rate = speed
         audioPlayer.play()
     }
     
     func playAudioVariablePitch(pitch:Float) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        // plays with variable pitch, pitch units are cents, 1 octave = 1200
+        // allowable range is -2400 to 2400, 0 is normal pitch
+        
+        stopAudio()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -88,11 +104,5 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.play()
     }
     
-    @IBAction func stopPlay(sender: UIButton) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
-
-    }
     
 }
